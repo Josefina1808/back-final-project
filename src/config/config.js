@@ -16,6 +16,11 @@ module.exports = {
     collection: "products",
     connectString: "mongodb://127.0.0.1/",
     projection: { __v: 0 },
+    options: {
+      useNewUrlParser: true, //No necesario desde mongoose 6
+      useUnifiedTopology: true, //No necesario desde mongoose 6
+      serverSelectionTimeoutMS: 5000
+    }
   },
   fileSystem: {
     path: "./data",

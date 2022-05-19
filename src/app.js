@@ -11,18 +11,11 @@ const app = express();
 app.use(session(options));
 const httpServer = new HttpServer(app);
 
-
-
 /* Websocket config */
 const {socket} = require('./socket')
 const { Server: IOServer } = require("socket.io");
 const io = new IOServer(httpServer);
 socket(io)
-
-//Router
-const Router = require("./routers/indexRouter");
-const router = new Router()
-app.use("/", router.start());
 
 /* MOTOR PLANTILLA - HBS */
 app.engine(
@@ -40,6 +33,11 @@ app.set("views engine", "hbs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./views/layouts"));
+
+//Router
+const Router = require("./routers/indexRouter");
+const router = new Router()
+app.use("/", router.start());
 
 //Manejador de errores
 app.use(function (err, req, res, next) {

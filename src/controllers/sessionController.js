@@ -1,6 +1,4 @@
 const UsersService = require('../services/usersService')
-const path = require('path')
-const server = require("express").Router();
 
 module.exports = class SessionController {
 
