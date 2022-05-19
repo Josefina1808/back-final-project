@@ -11,6 +11,7 @@ Algunas de las rutas son:
 | GET    | **/info**        | Muestra información relativa a la app |
 
 ### Detalles y comentarios
+Base Mongo no está en funcionamiento. Testar con persistencia en Memoria (MEM) o Archivo(FILE)
 # Autor
 Josefina Esnaola
 # Reconocimientos
